@@ -1,4 +1,4 @@
-package co.com.firsttest;
+package firsttest;
 
 public class SimpleCalculator {
 
