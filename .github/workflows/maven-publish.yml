@@ -23,7 +23,7 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Maven Package
-      run: -B clean package -DskipTests
+      run: mvn -B clean package -DskipTests
     - name: Maven verify
       run: mvn -B clean verify
       
