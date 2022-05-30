@@ -22,8 +22,10 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
-    - name: testing
-      run: mvn -B test
+    - name: Maven Package
+      run: -B clean package -DskipTests
+    - name: Maven verify
+      run: mvn -B clean verify
       
   build:
     needs: tests
