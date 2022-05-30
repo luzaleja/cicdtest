@@ -10,8 +10,8 @@ on:
     branches: [master]
     
 jobs:
-  test:
-    name: Tests
+  tests:
+    name: Testing
     runs-on: ubuntu-latest
     
     steps: 
@@ -26,7 +26,8 @@ jobs:
       run: mvn -B test
       
   build:
-
+    needs: tests
+    name: Building
     runs-on: ubuntu-latest
 
     steps:
@@ -39,5 +40,5 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn -B package -DskipTests --file.pom.xml
+      run: mvn -B package -DskipTests --file pom.xml
 
